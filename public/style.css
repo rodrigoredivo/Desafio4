@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,700i,800,800i&display=swap');
+
+  :root {
+    --primary-color: #f7cac9;
+  }
+
+  * {
+    margin : 0;
+    padding: 0;
+    border: none;
+  }
+  body {
+    background: #cf849d;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  header {
+    background-color:#000;
+    width: 100%;
+    padding: 32px;
+    text-align: center;
+    box-sizing: border-box;
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  .links {
+    font-size: 29px;
+  }
+
+  .links a + a {
+    margin-left: 32px;
+  } 
+
+  .links a{
+    text-decoration: none;
+    color: #f7cac9;
+    position: relative;
+  }
+
+  .links a.active {
+    color: #f7cac9;
+    font-weight: bold;
+  }
+
+  .links a:hover {
+    color: #fff;
+  }
+
+  .links a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+  }
+  
+  .links a:hover::after {
+    width: 100%;
+    transition: width 200ms ease-in-out;
+  }
+
+  /* === CARD === */
+
+  .card {
+    background-color: #000;
+    color: #cf849d;
+    width: 900px;
+    min-height: 500px;
+
+    /* === ESPAÇAMENTO AO CENTRO === */
+    margin: 100px auto;
+
+    /* === BORDER === */
+    border-radius: 12px;
+
+    /* === GRID DIVIDIDO EM 2 === */
+    display: grid;
+    grid-template-columns: 40% 60%;
+
+    /* === SHADOW === */
+    box-shadow: 6px 8px 6px -2px rgb(24, 24, 24);
+    
+    /* === ANIMATION === */
+    animation-name: go 150ms ease;
+  }
+
+  @keyframes go {
+    from{
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* === BORDER NA IMAGE DO AVATAR === */
+  .card .avatar {
+    border-radius: 12px 0px 0px 12px;
+  }
+
+  /* === DETAILS === */
+  .details {
+    padding: 30px;
+  }
+
+  /* === BORDER ENTRE OS ITENS === */
+  .details .item {
+    border-bottom: 1px solid #f1f1f1;
+    padding: 16px 0;
+  }
+
+  /* === TIRANDO BORDA DO ULTIMO ITEM COM FIRST-CHILD COMO PEDI NO DESAFIO === */
+  .details .item:first-child {
+    border: none;
+  }
+
+  /* === PEGANDO A PRIMEIRA DIV DA DIV ITEM === */
+  .details h3,
+  .details .item div:nth-child(1) {
+    font-size: 14px;
+    line-height: 24px;
+    color: #ff3d7e;
+    letter-spacing: 0.5px;
+    font-weight: bolder;
+    text-transform: uppercase;
+  }
+
+  
+  .details .item div:nth-child(2) {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: normal;
+    color: #fff;
+    font-style: italic;
+  }
+
+  .details h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #ff8bb2fb;
+  }
+
+  .details .item span {
+    padding: 5px 23px;
+    background-color: #f1f1f1;
+    border-radius: 6px;
+    color: rgb(46, 43, 46);
+    margin-right: 8px;
+    margin-top: 8px;
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+
+  .details .item span {
+    padding: 5px 23px;
+    background-color: #f1f1f1;
+    border-radius: 6px;
+    color: rgb(46, 43, 46);
+    margin-right: 8px;
+    margin-top: 8px;
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+
+  /* === FORM === */
+
+  input {
+    width: 100%;
+    outline: none;
+    font-size: 18px;
+    border-radius: 6px;
+    padding-left: 10px ;
+    font-style: italic;
+    color: rgb(46, 43, 46);
+  }
+
+  input[type="radio"] {
+    width: initial;
+    margin-right: 4px;
+  }
+  
+  input::placeholder {
+    font-size: 18px;
+    font-weight: normal;
+    color: rgb(24, 24, 24);
+  }
+
+  select {
+    width: 60%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 6px;
+    padding-left: 16px ;
+    font-style: italic;
+    background-color: white;
+    color: rgb(46, 43, 46);
+    font-weight: bold;
+  }
+
+  textarea {
+    width: 57%;
+    height: 60px;
+    border-radius: 6px;
+    padding: 16px 0px 0px 16px;
+  }
+
+  textarea::placeholder {
+    font-size: 14px;
+    font-weight: normal;
+    font-style: italic;
+    color: rgb(46, 43, 46);
+  }
+ 
+  button[type="submit"],
+  a.button {
+    padding: 8px 32px;
+    background-color: #f1f1f1;
+    color: #ff3d7e;
+    font-weight: bold;
+    border-radius: 16px;
+    width: 200px;
+    font-size: 20px;
+  }
+
+  a.button {
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+  } 
+
+  #formDelete button{
+    float: right;
+  }
+
+  #formSave button{
+    position: relative;
+    top: 38px;
+  }
+
+  #formSaveTeachers button{
+    position: relative;
+    top: 68px;
+  }
+   
+
+  /* INDEX TEACHERS */
+  .table-container {
+    display: block;
+    padding: 40px;
+    box-sizing: border-box;
+  }
+
+  .table-container table {
+    border-spacing: 0;
+  }
+
+  .table-container thead tr th {
+    text-align: center;
+    color: #ff3d7e;
+  }
+
+  th {
+    text-transform: uppercase;
+    color: #cf849d;
+    font-size: 20px;
+  }
+
+  td {
+    color: #d9d9d9;
+    text-align: center;
+  }
+
+  td, th {
+    padding: 20px;
+    border-bottom: 1px solid #d9d9d9;
+  }
+
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  tbody tr td:first-child {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    align-items: center;
+  }
+
+  tbody tr td:first-child span {
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    background-size: contain;
+    border-radius: 50%;
+    box-shadow: 5px 1px 10px -5px #ff3d7e;
+    border: 2px solid #d9d9d9;
+  }
+
+  tbody tr td:last-child a ,
+  .table-container > a{
+    background-color: var(--primary-color);
+    padding: 9px 18px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+
+  .table-container > a {
+    margin-bottom: 8px;
+    display: inline-block;
+  }
+
+  .table-container thead tr th:last-child,
+  td:last-child {
+    text-align: center;
+  }
+
+  span.item{
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    padding: 4px 10px;
+    margin: 2px 5px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: black;
+  }

@@ -1,0 +1,81 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+
+<form class="card" method="post" action="/teachers">
+
+  <section 
+    class="avatar" 
+    style="background: url(https://source.unsplash.com/collection/1466246/900x900) no-repeat center center / cover">
+  </section>
+
+  <section class="details">
+
+    <h3>New Teacher</h3>
+
+      <div class="item">
+        <div>Avatar URL</div>
+        <div>
+          <input 
+            type="url"
+            name="avatar_url"
+            placeholder="http://"
+          >
+        </div>
+      </div>
+
+      <div class="item">
+        <div>Full name</div>
+        <div>
+          <input 
+            type="text"
+            name="name"
+            placeholder="Name Completed"
+          >
+        </div>
+      </div>
+
+      <div class="item">
+        <div>Date of birth</div>
+        <div>
+          <input 
+            type="date"
+            name="date"
+          >
+        </div>
+      </div>
+
+      <div class="item">
+        <div>Educational level</div>
+        <div>
+          <select name="degree">
+            <option value="High Complete">Complete high school</option> 
+            <option value="Higher Complete" selected>Complete higher education</option>
+            <option value="Master">Master's</option>
+            <option value="Doctorate">Doctorate degree</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="item">
+        <div>Type of class</div>
+        <div>
+          <span><input type="radio" name="typeOfClass" value="Presential" checked>Presential</span>
+          <span><input type="radio" name="typeOfClass" value="Remote">Remote</span>
+        </div>
+      </div>
+    <div>
+      <div class="item">
+        <div>Acting</div>
+        <div>
+          <textarea name="acting" cols="30" rows="10" placeholder="deve conter as informações das matérias que o professor pode lecionar."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit">Save</button>
+  </section>
+
+</form>
+
+{% endblock content %}

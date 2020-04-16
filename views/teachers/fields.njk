@@ -1,0 +1,91 @@
+<section class="details" width="90%">
+
+  <h3>New Teacher</h3>
+
+  <div class="item">
+    <div>Avatar URL</div>
+    <div>
+      <input type="url" name="avatar_url" placeholder="http://" value="{{ teacher.avatar_url}}">
+    </div>
+  </div>
+
+  <div class="item">
+    <div>Full name</div>
+    <div>
+      <input type="text" name="name" placeholder="Name Completed" value="{{ teacher.name }}">
+    </div>
+  </div>
+
+  <div class="item">
+    <div>Date of birth</div>
+    <div>
+      <input type="date" name="date" value="{{ teacher.date }}">
+    </div>
+  </div>
+
+  <div class="item">
+    <div>Educational level</div>
+    <div>
+      <select name="degree">
+        <option 
+          value="High Complete"
+          {% if teacher.degree == "High Complete" %}
+          selected
+          {% endif %}>Complete high school
+        </option>
+        <option 
+          value="Higher Complete"
+          {% if teacher.degree == "Higher Complete" %}
+          selected
+          {% endif %}>Complete higher education
+        </option>
+        <option 
+          value="Master"
+          {% if teacher.degree == "Master" %}
+          selected
+          {% endif %}>Master's
+        </option>
+        <option 
+          value="Doctorate"
+          {% if teacher.degree == "Doctorate" %}
+          selected
+          {% endif %}>Doctorate degree
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="item">
+    <div>Type of class</div>
+    <div>
+      <span>
+        <input
+          type="radio"
+          name="typeOfClass"
+          value="Presential"
+          {% if teacher.typeOfClass == 'Presential' %} 
+          checked
+          {% endif %}>Presential
+      </span>
+      <span>
+        <input 
+          type="radio" 
+          name="typeOfClass" 
+          value="Remote"
+          {% if teacher.typeOfClass == 'Remote'%}
+          checked
+          {% endif %}>Remote
+      </span>
+    </div>
+  </div>
+  <div>
+    <div class="item">
+      <div>Acting</div>
+      <div>
+        <input name="acting" value="{{ teacher.acting }}">
+      </div>
+    </div>
+  </div>
+
+  <button type="submit">Save</button>
+</section>

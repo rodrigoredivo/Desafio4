@@ -1,0 +1,37 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+
+<div class="card table-container">
+  
+  <a href="/students/create">New</a>
+
+  <table width="100%">
+    <thead>
+      <tr>
+        <th>Name Completed</th>
+        <th>Side Dish</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for teacher in teachers %}
+      <tr>
+        <td>
+          <span style="background-image: url({{teacher.avatar_url}})"></span>
+          {{ teacher.name }}
+        </td>
+        <td>
+          {% for actings in teacher.acting%}
+          <span class="item">{{ actings }}</span>
+          {% endfor %}      
+        </td>
+        <td><a href="/teachers/{{teacher.id}}">View</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  
+</div>
+
+{% endblock content %}
