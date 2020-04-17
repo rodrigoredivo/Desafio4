@@ -23,4 +23,4 @@ routes.post('/students', students.post)
 routes.put('/students', students.put)
 routes.delete('/students', students.delete)
 
-module.exports = routes
+module.exports = routes 
